@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "file.upload",
+      "type": "com.example.sms.config.FileUploadConfig",
+      "sourceType": "com.example.sms.config.FileUploadConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "file.upload.allow-types",
+      "type": "java.lang.String[]",
+      "sourceType": "com.example.sms.config.FileUploadConfig"
+    },
+    {
+      "name": "file.upload.base-path",
+      "type": "java.lang.String",
+      "sourceType": "com.example.sms.config.FileUploadConfig"
+    },
+    {
+      "name": "file.upload.max-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.example.sms.config.FileUploadConfig"
+    }
+  ],
+  "hints": []
+}
