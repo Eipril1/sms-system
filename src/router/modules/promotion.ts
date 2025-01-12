@@ -1,17 +1,29 @@
+import Layout from '@/layout/MainLayout.vue'
+
 export default {
   path: '/promotion',
-  component: () => import('@/layout/MainLayout.vue'),
-  meta: { title: '安全促进' },
+  component: Layout,
+  name: 'Promotion',
+  meta: {
+    title: '安全促进',
+    icon: 'Promotion'
+  },
   children: [
     {
       path: 'training',
-      component: () => import('@/views/promotion/Training.vue'),
-      meta: { title: '安全培训和教育' }
+      name: 'SafetyTraining',
+      component: () => import('@/views/promotion/training/index.vue'),
+      meta: {
+        title: '安全培训和教育'
+      }
     },
     {
       path: 'communication',
-      component: () => import('@/views/promotion/Communication.vue'),
-      meta: { title: '安全交流' }
+      name: 'SafetyCommunication',
+      component: () => import('@/views/promotion/communication/index.vue'),
+      meta: {
+        title: '安全交流'
+      }
     }
   ]
 } 

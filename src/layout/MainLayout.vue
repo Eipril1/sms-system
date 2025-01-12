@@ -3,7 +3,7 @@
     <!-- 侧边栏 -->
     <el-aside :width="isCollapse ? '64px' : '220px'" class="aside">
       <!-- Logo区域 -->
-      <div class="logo-container" :class="{ 'collapsed': isCollapse }">
+      <div class="logo-container" :class="{ 'collapsed': isCollapse }" @click="goHome">
         <img src="@/assets/logo.png" alt="瑞丽航空" class="logo">
       </div>
       
@@ -12,23 +12,34 @@
         :default-active="activeMenu"
         class="el-menu-vertical"
         :collapse="isCollapse"
-        :collapse-transition="false"
-        background-color="#304156"
-        text-color="#fff"
-        active-text-color="#409EFF"
         router
       >
-        <!-- 1. 安全政策和目标 -->
-        <el-sub-menu index="policy">
+        <!-- 安全政策和目标 -->
+        <el-sub-menu index="/policy">
           <template #title>
-            <el-icon><DocumentCopy /></el-icon>
+            <el-icon><Shield /></el-icon>
             <span>安全政策和目标</span>
           </template>
-          <el-menu-item index="/policy/commitment">管理者承诺</el-menu-item>
-          <el-menu-item index="/policy/responsibility">安全责任</el-menu-item>
-          <el-menu-item index="/policy/key-personnel">任命关键安全人员</el-menu-item>
-          <el-menu-item index="/policy/emergency">应急预案协调</el-menu-item>
-          <el-menu-item index="/policy/sms-doc">SMS文件</el-menu-item>
+          <el-menu-item index="/policy/commitment">
+            <el-icon><UserFilled /></el-icon>
+            <span>管理者承诺</span>
+          </el-menu-item>
+          <el-menu-item index="/policy/responsibility">
+            <el-icon><List /></el-icon>
+            <span>安全责任</span>
+          </el-menu-item>
+          <el-menu-item index="/policy/key-personnel">
+            <el-icon><User /></el-icon>
+            <span>任命关键安全人员</span>
+          </el-menu-item>
+          <el-menu-item index="/policy/emergency">
+            <el-icon><AlarmClock /></el-icon>
+            <span>应急预案协调</span>
+          </el-menu-item>
+          <el-menu-item index="/policy/sms-doc">
+            <el-icon><Document /></el-icon>
+            <span>SMS文件</span>
+          </el-menu-item>
         </el-sub-menu>
 
         <!-- 2. 安全风险管理 -->
@@ -37,29 +48,72 @@
             <el-icon><WarningFilled /></el-icon>
             <span>安全风险管理</span>
           </template>
-          <el-menu-item index="/risk/identification">危险源识别</el-menu-item>
-          <el-menu-item index="/risk/assessment">风险评价和控制</el-menu-item>
+          <el-menu-item index="/risk/assessment">
+            <el-icon><Search /></el-icon>
+            <span>风险识别与评估</span>
+          </el-menu-item>
+          <el-menu-item index="/risk/control">
+            <el-icon><DataLine /></el-icon>
+            <span>风险控制与跟踪</span>
+          </el-menu-item>
         </el-sub-menu>
 
         <!-- 3. 安全保证 -->
-        <el-sub-menu index="assurance">
+        <el-sub-menu index="/assurance">
           <template #title>
             <el-icon><CircleCheckFilled /></el-icon>
             <span>安全保证</span>
           </template>
-          <el-menu-item index="/assurance/performance">安全绩效监测</el-menu-item>
-          <el-menu-item index="/assurance/change">变更管理</el-menu-item>
-          <el-menu-item index="/assurance/improvement">持续改进</el-menu-item>
+          <el-menu-item index="/assurance/monitoring">
+            <el-icon><TrendCharts /></el-icon>
+            <span>安全绩效监测</span>
+          </el-menu-item>
+          <el-menu-item index="/assurance/change">
+            <el-icon><RefreshRight /></el-icon>
+            <span>变更管理</span>
+          </el-menu-item>
+          <el-menu-item index="/assurance/improvement">
+            <el-icon><Refresh /></el-icon>
+            <span>持续改进</span>
+          </el-menu-item>
+          <el-menu-item index="/assurance/info">
+            <el-icon><Message /></el-icon>
+            <span>信息管理</span>
+          </el-menu-item>
+          <el-menu-item index="/assurance/supervision">
+            <el-icon><Check /></el-icon>
+            <span>监督审核</span>
+          </el-menu-item>
         </el-sub-menu>
 
         <!-- 4. 安全促进 -->
-        <el-sub-menu index="promotion">
+        <el-sub-menu index="/promotion">
           <template #title>
             <el-icon><Promotion /></el-icon>
             <span>安全促进</span>
           </template>
-          <el-menu-item index="/promotion/training">安全培训教育</el-menu-item>
-          <el-menu-item index="/promotion/communication">安全交流</el-menu-item>
+          <el-menu-item index="/promotion/training">
+            <el-icon><School /></el-icon>
+            <span>安全培训和教育</span>
+          </el-menu-item>
+          <el-menu-item index="/promotion/communication">
+            <el-icon><ChatDotRound /></el-icon>
+            <span>安全交流</span>
+          </el-menu-item>
+        </el-sub-menu>
+
+        <!-- SMS数据库 -->
+        <el-sub-menu index="database">
+          <template #title>
+            <el-icon><DataLine /></el-icon>
+            <span>SMS数据库</span>
+          </template>
+          <el-menu-item index="/database/hazard">危险源库</el-menu-item>
+          <el-menu-item index="/database/hidden-danger">隐患库</el-menu-item>
+          <el-menu-item index="/database/performance">绩效指标库</el-menu-item>
+          <el-menu-item index="/database/checklist">检查单库</el-menu-item>
+          <el-menu-item index="/database/self-inspection">法定自查库</el-menu-item>
+          <el-menu-item index="/database/findings">发现项库</el-menu-item>
         </el-sub-menu>
       </el-menu>
     </el-aside>
@@ -105,15 +159,20 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { Expand, Fold } from '@element-plus/icons-vue'
 
 const route = useRoute()
+const router = useRouter()
 const isCollapse = ref(false)
 const activeMenu = computed(() => route.path)
 
 const toggleSidebar = () => {
   isCollapse.value = !isCollapse.value
+}
+
+const goHome = () => {
+  router.push('/')
 }
 </script>
 
@@ -138,6 +197,11 @@ const toggleSidebar = () => {
   background: #2b3649;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .logo-container.collapsed {
@@ -293,5 +357,106 @@ const toggleSidebar = () => {
 
 :deep(.el-menu-item.is-active .el-icon) {
   color: #409EFF;
+}
+
+/* 添加嵌套子菜单的样式 */
+.nested-submenu :deep(.el-menu) {
+  background-color: #263445 !important; /* 更深的背景色 */
+}
+
+.nested-submenu :deep(.el-sub-menu__title) {
+  padding-left: 40px !important; /* 增加缩进 */
+  background-color: #304156 !important;
+}
+
+.nested-menu-item {
+  padding-left: 60px !important; /* 二级菜单项缩进更多 */
+  background-color: #263445 !important;
+}
+
+/* 悬停效果 */
+.nested-menu-item:hover {
+  background-color: #1f2d3d !important;
+}
+
+/* 选中状态 */
+.nested-menu-item.is-active {
+  background-color: #1f2d3d !important;
+}
+
+/* 信息管理子菜单样式 */
+.info-submenu :deep(.el-sub-menu__title) {
+  margin: 4px 0;
+  margin-left: 8px;
+  border-radius: 4px;
+  background-color: #1f2d3d !important;
+}
+
+.info-menu-group {
+  margin: 4px 0;
+  padding: 4px;
+  background-color: #1a2638;
+  border-radius: 4px;
+  margin-left: 16px;
+}
+
+.info-menu-item {
+  margin: 4px 0;
+  border-radius: 4px;
+  height: 40px !important;
+  line-height: 40px !important;
+  
+  &:deep(.el-icon) {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #909399;
+  }
+  
+  &:hover {
+    background-color: #283446 !important;
+  }
+  
+  &.is-active {
+    background-color: #409EFF !important;
+    
+    &:deep(.el-icon) {
+      color: #fff;
+    }
+  }
+}
+
+/* 覆盖原有的嵌套菜单样式 */
+.info-submenu :deep(.el-menu) {
+  background-color: transparent !important;
+}
+
+.info-menu-item {
+  padding-left: 20px !important;
+}
+
+/* 安全保证子菜单样式 */
+:deep(.el-menu-item) {
+  height: 50px;
+  line-height: 50px;
+  margin: 4px 0;
+  padding: 0 20px !important;
+  
+  .el-icon {
+    margin-right: 12px;
+    font-size: 18px;
+  }
+  
+  &:hover {
+    background-color: #263445 !important;
+  }
+  
+  &.is-active {
+    background-color: #409EFF !important;
+    color: #fff !important;
+    
+    .el-icon {
+      color: #fff !important;
+    }
+  }
 }
 </style> 

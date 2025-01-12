@@ -1,17 +1,29 @@
+import Layout from '@/layout/MainLayout.vue'
+
 export default {
   path: '/risk',
-  component: () => import('@/layout/MainLayout.vue'),
-  meta: { title: '安全风险管理' },
+  component: Layout,
+  name: 'Risk',
+  meta: {
+    title: '安全风险管理',
+    icon: 'Warning'
+  },
   children: [
     {
-      path: 'identification',
-      component: () => import('@/views/risk/Identification.vue'),
-      meta: { title: '危险源识别' }
+      path: 'assessment',
+      name: 'RiskAssessment',
+      component: () => import('@/views/risk/Assessment.vue'),
+      meta: {
+        title: '风险识别与评估'
+      }
     },
     {
-      path: 'assessment',
-      component: () => import('@/views/risk/Assessment.vue'),
-      meta: { title: '安全风险评价和控制' }
+      path: 'control',
+      name: 'RiskControl',
+      component: () => import('@/views/risk/RiskControl.vue'),
+      meta: {
+        title: '风险控制与跟踪'
+      }
     }
   ]
 } 
