@@ -17,7 +17,9 @@
         <!-- 安全政策和目标 -->
         <el-sub-menu index="/policy">
           <template #title>
-            <el-icon><Shield /></el-icon>
+            <el-icon>
+              <ShieldIcon/>
+            </el-icon>
             <span>安全政策和目标</span>
           </template>
           <el-menu-item index="/policy/commitment">
@@ -61,7 +63,9 @@
         <!-- 3. 安全保证 -->
         <el-sub-menu index="/assurance">
           <template #title>
-            <el-icon><CircleCheckFilled /></el-icon>
+            <el-icon>
+              <ShieldIcon/>
+            </el-icon>
             <span>安全保证</span>
           </template>
           <el-menu-item index="/assurance/monitoring">
@@ -73,17 +77,55 @@
             <span>变更管理</span>
           </el-menu-item>
           <el-menu-item index="/assurance/improvement">
-            <el-icon><Refresh /></el-icon>
+            <el-icon>
+              <Refresh/>
+            </el-icon>
             <span>持续改进</span>
           </el-menu-item>
           <el-menu-item index="/assurance/info">
-            <el-icon><Message /></el-icon>
+            <el-icon>
+              <Message/>
+            </el-icon>
             <span>信息管理</span>
           </el-menu-item>
-          <el-menu-item index="/assurance/supervision">
-            <el-icon><Check /></el-icon>
-            <span>监督审核</span>
-          </el-menu-item>
+          <el-sub-menu index="/assurance/supervision">
+            <template #title>
+              <el-icon>
+                <Check/>
+              </el-icon>
+              <span>监督审核</span>
+            </template>
+            <el-menu-item index="/assurance/supervision/daily/plan">
+              <el-icon>
+                <Calendar/>
+              </el-icon>
+              <span>检查计划</span>
+            </el-menu-item>
+            <el-menu-item index="/assurance/supervision/daily/task">
+              <el-icon>
+                <List/>
+              </el-icon>
+              <span>检查任务</span>
+            </el-menu-item>
+            <el-menu-item index="/assurance/supervision/daily/items">
+              <el-icon>
+                <Document/>
+              </el-icon>
+              <span>检查项管理</span>
+            </el-menu-item>
+            <el-menu-item index="/assurance/supervision/audit">
+              <el-icon>
+                <Search/>
+              </el-icon>
+              <span>内部审核</span>
+            </el-menu-item>
+            <el-menu-item index="/assurance/supervision/investigation">
+              <el-icon>
+                <Warning/>
+              </el-icon>
+              <span>调查分析</span>
+            </el-menu-item>
+          </el-sub-menu>
         </el-sub-menu>
 
         <!-- 4. 安全促进 -->
@@ -159,8 +201,31 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import { Expand, Fold } from '@element-plus/icons-vue'
+import {useRoute, useRouter} from 'vue-router'
+import {
+  Expand,
+  Fold,
+  UserFilled,
+  List,
+  User,
+  AlarmClock,
+  Document,
+  Warning,
+  WarningFilled,
+  Search,
+  DataLine,
+  CircleCheckFilled,
+  TrendCharts,
+  RefreshRight,
+  Refresh,
+  Message,
+  Check,
+  Calendar,
+  Promotion,
+  School,
+  ChatDotRound,
+  Lock as ShieldIcon
+} from '@element-plus/icons-vue'
 
 const route = useRoute()
 const router = useRouter()
