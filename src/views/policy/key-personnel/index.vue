@@ -81,8 +81,8 @@ const personnelList = ref([
   {
     code: 'KP001',
     name: '张三',
-    position: '安全总监',
-    department: '安全管理部',
+    position: 'test',
+    department: '安全监察部',
     role: '负责公司整体安全管理工作，确保安全管理体系有效运行...',
     appointDate: '2024-01-01',
     status: '在职'

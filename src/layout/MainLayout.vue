@@ -6,13 +6,13 @@
       <div class="logo-container" :class="{ 'collapsed': isCollapse }" @click="goHome">
         <img src="@/assets/logo.png" alt="瑞丽航空" class="logo">
       </div>
-      
+
       <!-- 导航菜单 -->
       <el-menu
-        :default-active="activeMenu"
-        class="el-menu-vertical"
-        :collapse="isCollapse"
-        router
+          :default-active="activeMenu"
+          class="el-menu-vertical"
+          :collapse="isCollapse"
+          router
       >
         <!-- 安全政策和目标 -->
         <el-sub-menu index="/policy">
@@ -23,23 +23,33 @@
             <span>安全政策和目标</span>
           </template>
           <el-menu-item index="/policy/commitment">
-            <el-icon><UserFilled /></el-icon>
+            <el-icon>
+              <UserFilled/>
+            </el-icon>
             <span>管理者承诺</span>
           </el-menu-item>
           <el-menu-item index="/policy/responsibility">
-            <el-icon><List /></el-icon>
+            <el-icon>
+              <List/>
+            </el-icon>
             <span>安全责任</span>
           </el-menu-item>
           <el-menu-item index="/policy/key-personnel">
-            <el-icon><User /></el-icon>
+            <el-icon>
+              <User/>
+            </el-icon>
             <span>任命关键安全人员</span>
           </el-menu-item>
           <el-menu-item index="/policy/emergency">
-            <el-icon><AlarmClock /></el-icon>
+            <el-icon>
+              <AlarmClock/>
+            </el-icon>
             <span>应急预案协调</span>
           </el-menu-item>
           <el-menu-item index="/policy/sms-doc">
-            <el-icon><Document /></el-icon>
+            <el-icon>
+              <Document/>
+            </el-icon>
             <span>SMS文件</span>
           </el-menu-item>
         </el-sub-menu>
@@ -47,15 +57,21 @@
         <!-- 2. 安全风险管理 -->
         <el-sub-menu index="risk">
           <template #title>
-            <el-icon><WarningFilled /></el-icon>
+            <el-icon>
+              <WarningFilled/>
+            </el-icon>
             <span>安全风险管理</span>
           </template>
           <el-menu-item index="/risk/assessment">
-            <el-icon><Search /></el-icon>
+            <el-icon>
+              <Search/>
+            </el-icon>
             <span>风险识别与评估</span>
           </el-menu-item>
           <el-menu-item index="/risk/control">
-            <el-icon><DataLine /></el-icon>
+            <el-icon>
+              <DataLine/>
+            </el-icon>
             <span>风险控制与跟踪</span>
           </el-menu-item>
         </el-sub-menu>
@@ -68,12 +84,16 @@
             </el-icon>
             <span>安全保证</span>
           </template>
-          <el-menu-item index="/assurance/monitoring">
-            <el-icon><TrendCharts /></el-icon>
+          <el-menu-item index="/assurance/Performance">
+            <el-icon>
+              <TrendCharts/>
+            </el-icon>
             <span>安全绩效监测</span>
           </el-menu-item>
           <el-menu-item index="/assurance/change">
-            <el-icon><RefreshRight /></el-icon>
+            <el-icon>
+              <RefreshRight/>
+            </el-icon>
             <span>变更管理</span>
           </el-menu-item>
           <el-menu-item index="/assurance/improvement">
@@ -88,58 +108,73 @@
             </el-icon>
             <span>信息管理</span>
           </el-menu-item>
-          <el-sub-menu index="/assurance/supervision">
-            <template #title>
-              <el-icon>
-                <Check/>
-              </el-icon>
-              <span>监督审核</span>
-            </template>
-            <el-menu-item index="/assurance/supervision/daily/plan">
-              <el-icon>
-                <Calendar/>
-              </el-icon>
-              <span>检查计划</span>
-            </el-menu-item>
-            <el-menu-item index="/assurance/supervision/daily/task">
-              <el-icon>
-                <List/>
-              </el-icon>
-              <span>检查任务</span>
-            </el-menu-item>
-            <el-menu-item index="/assurance/supervision/daily/items">
-              <el-icon>
-                <Document/>
-              </el-icon>
-              <span>检查项管理</span>
-            </el-menu-item>
-            <el-menu-item index="/assurance/supervision/audit">
-              <el-icon>
-                <Search/>
-              </el-icon>
-              <span>内部审核</span>
-            </el-menu-item>
-            <el-menu-item index="/assurance/supervision/investigation">
-              <el-icon>
-                <Warning/>
-              </el-icon>
-              <span>调查分析</span>
-            </el-menu-item>
-          </el-sub-menu>
+
+          <el-menu-item index="/assurance/supervision">
+            <el-icon>
+              <Check/>
+            </el-icon>
+            <span>监督审核</span>
+          </el-menu-item>
+
+
+          <!--          <el-sub-menu index="/assurance/supervision">-->
+          <!--            <template #title>-->
+          <!--              <el-icon>-->
+          <!--                <Check/>-->
+          <!--              </el-icon>-->
+          <!--              <span>监督审核</span>-->
+          <!--            </template>-->
+          <!--            <el-menu-item index="/assurance/supervision/daily/plan">-->
+          <!--              <el-icon>-->
+          <!--                <Calendar/>-->
+          <!--              </el-icon>-->
+          <!--              <span>检查计划</span>-->
+          <!--            </el-menu-item>-->
+          <!--            <el-menu-item index="/assurance/supervision/daily/task">-->
+          <!--              <el-icon>-->
+          <!--                <List/>-->
+          <!--              </el-icon>-->
+          <!--              <span>检查任务</span>-->
+          <!--            </el-menu-item>-->
+          <!--            <el-menu-item index="/assurance/supervision/daily/items">-->
+          <!--              <el-icon>-->
+          <!--                <Document/>-->
+          <!--              </el-icon>-->
+          <!--              <span>检查项管理</span>-->
+          <!--            </el-menu-item>-->
+          <!--            <el-menu-item index="/assurance/supervision/audit">-->
+          <!--              <el-icon>-->
+          <!--                <Search/>-->
+          <!--              </el-icon>-->
+          <!--              <span>内部审核</span>-->
+          <!--            </el-menu-item>-->
+          <!--            <el-menu-item index="/assurance/supervision/investigation">-->
+          <!--              <el-icon>-->
+          <!--                <Warning/>-->
+          <!--              </el-icon>-->
+          <!--              <span>调查分析</span>-->
+          <!--            </el-menu-item>-->
+          <!--          </el-sub-menu>-->
         </el-sub-menu>
 
         <!-- 4. 安全促进 -->
         <el-sub-menu index="/promotion">
           <template #title>
-            <el-icon><Promotion /></el-icon>
+            <el-icon>
+              <Promotion/>
+            </el-icon>
             <span>安全促进</span>
           </template>
           <el-menu-item index="/promotion/training">
-            <el-icon><School /></el-icon>
+            <el-icon>
+              <School/>
+            </el-icon>
             <span>安全培训和教育</span>
           </el-menu-item>
           <el-menu-item index="/promotion/communication">
-            <el-icon><ChatDotRound /></el-icon>
+            <el-icon>
+              <ChatDotRound/>
+            </el-icon>
             <span>安全交流</span>
           </el-menu-item>
         </el-sub-menu>
@@ -147,7 +182,9 @@
         <!-- SMS数据库 -->
         <el-sub-menu index="database">
           <template #title>
-            <el-icon><DataLine /></el-icon>
+            <el-icon>
+              <DataLine/>
+            </el-icon>
             <span>SMS数据库</span>
           </template>
           <el-menu-item index="/database/hazard">危险源库</el-menu-item>
@@ -166,18 +203,18 @@
         <!-- 折叠按钮 -->
         <div class="toggle-button" @click="toggleSidebar">
           <el-icon :size="20">
-            <component :is="isCollapse ? 'Expand' : 'Fold'" />
+            <component :is="isCollapse ? 'Expand' : 'Fold'"/>
           </el-icon>
         </div>
-        
+
         <!-- 系统标题 -->
         <h1 class="system-title">安全管理系统</h1>
-        
+
         <!-- 右侧用户信息等 -->
         <div class="header-right">
           <el-dropdown>
             <span class="user-info">
-              <el-avatar :size="32" icon="UserFilled" />
+              <el-avatar :size="32" icon="UserFilled"/>
               <span class="username">管理员</span>
             </span>
             <template #dropdown>
@@ -193,14 +230,14 @@
 
       <!-- 内容区 -->
       <el-main>
-        <router-view />
+        <router-view/>
       </el-main>
     </el-container>
   </el-container>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import {ref, computed} from 'vue'
 import {useRoute, useRouter} from 'vue-router'
 import {
   Expand,
@@ -263,10 +300,12 @@ const goHome = () => {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
-  
-  &:hover {
-    opacity: 0.8;
-  }
+
+&
+:hover {
+  opacity: 0.8;
+}
+
 }
 
 .logo-container.collapsed {
@@ -295,7 +334,7 @@ const goHome = () => {
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  position: relative;  /* 为绝对定位的标题做准备 */
+  position: relative; /* 为绝对定位的标题做准备 */
 }
 
 /* 系统标题样式 */
@@ -315,11 +354,13 @@ const goHome = () => {
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
-  
-  &:hover {
-    background-color: #f5f7fa;
-    color: #409EFF;
-  }
+
+&
+:hover {
+  background-color: #f5f7fa;
+  color: #409EFF;
+}
+
 }
 
 .header-right {
@@ -360,11 +401,13 @@ const goHome = () => {
 :deep(.el-menu-item),
 :deep(.el-sub-menu__title) {
   color: #bfcbd9 !important;
-  
-  &:hover {
-    color: #fff !important;
-    background-color: #263445 !important;
-  }
+
+&
+:hover {
+  color: #fff !important;
+  background-color: #263445 !important;
+}
+
 }
 
 :deep(.el-menu-item.is-active) {
@@ -391,11 +434,11 @@ const goHome = () => {
     height: 100%;
     z-index: 1000;
   }
-  
+
   .company-name {
     display: none;
   }
-  
+
   .system-title {
     font-size: 12px;
   }
@@ -404,14 +447,17 @@ const goHome = () => {
 /* 修改子菜单样式 */
 :deep(.el-sub-menu .el-menu-item) {
   background-color: #1f2d3d !important;
-  
-  &:hover {
-    background-color: #001528 !important;
-  }
-  
-  &.is-active {
-    background-color: #263445 !important;
-  }
+
+&
+:hover {
+  background-color: #001528 !important;
+}
+
+&
+.is-active {
+  background-color: #263445 !important;
+}
+
 }
 
 /* 菜单图标颜色 */
@@ -470,24 +516,29 @@ const goHome = () => {
   border-radius: 4px;
   height: 40px !important;
   line-height: 40px !important;
-  
-  &:deep(.el-icon) {
-    margin-right: 10px;
-    font-size: 16px;
-    color: #909399;
-  }
-  
-  &:hover {
-    background-color: #283446 !important;
-  }
-  
-  &.is-active {
-    background-color: #409EFF !important;
-    
-    &:deep(.el-icon) {
-      color: #fff;
-    }
-  }
+
+&
+:deep(.el-icon) {
+  margin-right: 10px;
+  font-size: 16px;
+  color: #909399;
+}
+
+&
+:hover {
+  background-color: #283446 !important;
+}
+
+&
+.is-active {
+  background-color: #409EFF !important;
+
+&
+:deep(.el-icon) {
+  color: #fff;
+}
+
+}
 }
 
 /* 覆盖原有的嵌套菜单样式 */
@@ -505,23 +556,26 @@ const goHome = () => {
   line-height: 50px;
   margin: 4px 0;
   padding: 0 20px !important;
-  
-  .el-icon {
-    margin-right: 12px;
-    font-size: 18px;
-  }
-  
-  &:hover {
-    background-color: #263445 !important;
-  }
-  
-  &.is-active {
-    background-color: #409EFF !important;
-    color: #fff !important;
-    
-    .el-icon {
-      color: #fff !important;
-    }
-  }
+
+.el-icon {
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+&
+:hover {
+  background-color: #263445 !important;
+}
+
+&
+.is-active {
+  background-color: #409EFF !important;
+  color: #fff !important;
+
+.el-icon {
+  color: #fff !important;
+}
+
+}
 }
 </style> 
