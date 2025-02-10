@@ -55,7 +55,7 @@
         </el-sub-menu>
 
         <!-- 2. 安全风险管理 -->
-        <el-sub-menu index="risk">
+        <el-sub-menu index="/risk">
           <template #title>
             <el-icon>
               <WarningFilled/>
@@ -73,6 +73,56 @@
               <DataLine/>
             </el-icon>
             <span>风险控制与跟踪</span>
+          </el-menu-item>
+        </el-sub-menu>
+
+        <!-- 风险管理 -->
+        <el-sub-menu index="/risk-management">
+          <template #title>
+            <el-icon>
+              <Warning/>
+            </el-icon>
+            <span>风险管理</span>
+          </template>
+
+          <!-- 危险源查询 -->
+          <el-menu-item index="/risk-management/hazard-query">
+            <el-icon>
+              <Search/>
+            </el-icon>
+            <span>危险源查询</span>
+          </el-menu-item>
+
+          <!-- 危险源管理动态变化 -->
+          <el-menu-item index="/risk-management/hazard-dynamic">
+            <el-icon>
+              <DataLine/>
+            </el-icon>
+            <span>危险源管理动态变化</span>
+          </el-menu-item>
+
+          <!-- 风险评价标准 -->
+          <el-menu-item index="/risk-management/evaluation-standards">
+            <el-icon>
+              <Files/>
+            </el-icon>
+            <span>风险评价标准</span>
+          </el-menu-item>
+
+          <!-- 风险管理方案 -->
+          <el-menu-item index="/risk-management/management-plan">
+            <el-icon>
+              <Document/>
+            </el-icon>
+            <span>风险管理方案</span>
+          </el-menu-item>
+
+          <!-- 安全隐患动态控制 -->
+          <el-menu-item index="/risk-management/safety-control">
+            <el-icon>
+              <Monitor/>
+            </el-icon>
+            <span>安全隐患动态控制</span>
           </el-menu-item>
         </el-sub-menu>
 
@@ -115,46 +165,6 @@
             </el-icon>
             <span>监督审核</span>
           </el-menu-item>
-
-
-          <!--          <el-sub-menu index="/assurance/supervision">-->
-          <!--            <template #title>-->
-          <!--              <el-icon>-->
-          <!--                <Check/>-->
-          <!--              </el-icon>-->
-          <!--              <span>监督审核</span>-->
-          <!--            </template>-->
-          <!--            <el-menu-item index="/assurance/supervision/daily/plan">-->
-          <!--              <el-icon>-->
-          <!--                <Calendar/>-->
-          <!--              </el-icon>-->
-          <!--              <span>检查计划</span>-->
-          <!--            </el-menu-item>-->
-          <!--            <el-menu-item index="/assurance/supervision/daily/task">-->
-          <!--              <el-icon>-->
-          <!--                <List/>-->
-          <!--              </el-icon>-->
-          <!--              <span>检查任务</span>-->
-          <!--            </el-menu-item>-->
-          <!--            <el-menu-item index="/assurance/supervision/daily/items">-->
-          <!--              <el-icon>-->
-          <!--                <Document/>-->
-          <!--              </el-icon>-->
-          <!--              <span>检查项管理</span>-->
-          <!--            </el-menu-item>-->
-          <!--            <el-menu-item index="/assurance/supervision/audit">-->
-          <!--              <el-icon>-->
-          <!--                <Search/>-->
-          <!--              </el-icon>-->
-          <!--              <span>内部审核</span>-->
-          <!--            </el-menu-item>-->
-          <!--            <el-menu-item index="/assurance/supervision/investigation">-->
-          <!--              <el-icon>-->
-          <!--                <Warning/>-->
-          <!--              </el-icon>-->
-          <!--              <span>调查分析</span>-->
-          <!--            </el-menu-item>-->
-          <!--          </el-sub-menu>-->
         </el-sub-menu>
 
         <!-- 4. 安全促进 -->
@@ -193,6 +203,132 @@
           <el-menu-item index="/database/checklist">检查单库</el-menu-item>
           <el-menu-item index="/database/self-inspection">法定自查库</el-menu-item>
           <el-menu-item index="/database/findings">发现项库</el-menu-item>
+        </el-sub-menu>
+
+        <!-- 安全与质量监督审核 -->
+        <el-sub-menu index="/supervision">
+          <template #title>
+            <el-icon>
+              <Monitor/>
+            </el-icon>
+            <span>安全与质量监督审核</span>
+          </template>
+
+          <!-- 1. 公司/部门监察与审核 -->
+          <el-menu-item index="/supervision/audit">
+            <el-icon>
+              <Aim/>
+            </el-icon>
+            <span>公司/部门监察与审核</span>
+          </el-menu-item>
+
+          <!-- 2. 安全生产过程管理 -->
+          <el-menu-item index="/supervision/safety-production">
+            <el-icon>
+              <SetUp/>
+            </el-icon>
+            <span>安全生产过程管理</span>
+          </el-menu-item>
+        </el-sub-menu>
+
+        <!-- 纠正预防 -->
+        <el-sub-menu index="/correction">
+          <template #title>
+            <el-icon>
+              <Warning/>
+            </el-icon>
+            <span>纠正预防</span>
+          </template>
+
+          <!-- 工作任务分配 -->
+          <el-menu-item index="/correction/task-assignment">
+            <el-icon>
+              <Document/>
+            </el-icon>
+            <span>工作任务分配</span>
+          </el-menu-item>
+
+          <!-- 发现问题 -->
+          <el-menu-item index="/correction/issue-discovery">
+            <el-icon>
+              <Search/>
+            </el-icon>
+            <span>发现问题</span>
+          </el-menu-item>
+
+          <!-- 跟踪验证 -->
+          <el-menu-item index="/correction/tracking-verification">
+            <el-icon>
+              <View/>
+            </el-icon>
+            <span>跟踪验证</span>
+          </el-menu-item>
+        </el-sub-menu>
+
+        <!-- 系统管理 -->
+        <el-sub-menu index="/system">
+          <template #title>
+            <el-icon>
+              <Setting/>
+            </el-icon>
+            <span>系统管理</span>
+          </template>
+
+          <!-- 用户管理 -->
+          <el-menu-item index="/system/users">
+            <el-icon>
+              <User/>
+            </el-icon>
+            <span>用户管理</span>
+          </el-menu-item>
+
+          <!-- 角色管理 -->
+          <el-menu-item index="/system/roles">
+            <el-icon>
+              <UserFilled/>
+            </el-icon>
+            <span>角色管理</span>
+          </el-menu-item>
+
+          <!-- 部门管理 -->
+          <el-menu-item index="/system/departments">
+            <el-icon>
+              <OfficeBuilding/>
+            </el-icon>
+            <span>部门管理</span>
+          </el-menu-item>
+
+          <!-- 菜单管理 -->
+          <el-menu-item index="/system/menus">
+            <el-icon>
+              <Menu/>
+            </el-icon>
+            <span>菜单管理</span>
+          </el-menu-item>
+
+          <!-- 字典管理 -->
+          <el-menu-item index="/system/dict">
+            <el-icon>
+              <Collection/>
+            </el-icon>
+            <span>字典管理</span>
+          </el-menu-item>
+
+          <!-- 操作日志 -->
+          <el-menu-item index="/system/logs/operation">
+            <el-icon>
+              <Operation/>
+            </el-icon>
+            <span>操作日志</span>
+          </el-menu-item>
+
+          <!-- 登录日志 -->
+          <el-menu-item index="/system/logs/login">
+            <el-icon>
+              <Key/>
+            </el-icon>
+            <span>登录日志</span>
+          </el-menu-item>
         </el-sub-menu>
       </el-menu>
     </el-aside>
@@ -261,7 +397,18 @@ import {
   Promotion,
   School,
   ChatDotRound,
-  Lock as ShieldIcon
+  Lock as ShieldIcon,
+  Monitor,
+  Aim,
+  SetUp,
+  Files,
+  View,
+  Setting,
+  OfficeBuilding,
+  Menu,
+  Collection,
+  Operation,
+  Key
 } from '@element-plus/icons-vue'
 
 const route = useRoute()
