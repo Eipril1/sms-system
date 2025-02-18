@@ -12,7 +12,7 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
-    "types": ["element-plus/global", "vite/client", "node"],
+    "types": ["element-plus/global", "vite/client", "node", "vue-router"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]

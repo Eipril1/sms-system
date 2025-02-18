@@ -49,7 +49,16 @@ const system: RouteRecordRaw = {
             name: 'LoginLog',
             component: () => import('@/views/system/logs/login/index.vue'),
             meta: {title: '登录日志', icon: 'Key'}
-        }
+        },
+        {
+            path: 'homeMg',
+            name: 'HomeMg',
+            component: () => import('@/views/system/homeMg/index.vue'),
+            meta: {
+                title: '首页管理',
+                icon: 'HomeFilled'
+            }
+        },
     ]
 }
 

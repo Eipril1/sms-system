@@ -10,15 +10,15 @@
     <div class="quick-access">
       <el-row :gutter="20">
         <el-col :span="4" v-for="item in quickAccessItems" :key="item.id">
-          <el-card 
-            class="quick-access-item" 
-            :class="item.type" 
-            shadow="hover"
-            @click="handleQuickAccess(item)"
+          <el-card
+              class="quick-access-item"
+              :class="item.type"
+              shadow="hover"
+              @click="handleQuickAccess(item)"
           >
             <div class="icon-wrapper">
               <el-icon :size="32">
-                <component :is="item.icon" />
+                <component :is="item.icon"/>
               </el-icon>
             </div>
             <div class="item-info">
@@ -51,20 +51,24 @@
               </div>
             </template>
             <div class="task-statistics">
-              <div 
-                v-for="task in taskStatistics" 
-                :key="task.type" 
-                class="task-item"
-                @click="handleTaskClick(task)"
+              <div
+                  v-for="task in taskStatistics"
+                  :key="task.type"
+                  class="task-item"
+                  @click="handleTaskClick(task)"
               >
                 <div class="task-icon" :class="task.type">
-                  <el-icon :size="24"><component :is="task.icon" /></el-icon>
+                  <el-icon :size="24">
+                    <component :is="task.icon"/>
+                  </el-icon>
                 </div>
                 <div class="task-info">
                   <h4>{{ task.title }}</h4>
                   <p>{{ task.count }}条待处理</p>
                 </div>
-                <el-icon class="arrow-icon"><ArrowRight /></el-icon>
+                <el-icon class="arrow-icon">
+                  <ArrowRight/>
+                </el-icon>
               </div>
             </div>
           </el-card>
@@ -103,7 +107,9 @@
             </template>
             <div class="file-list">
               <div v-for="file in latestFiles" :key="file.id" class="file-item">
-                <el-icon><Document /></el-icon>
+                <el-icon>
+                  <Document/>
+                </el-icon>
                 <span class="file-name">{{ file.name }}</span>
                 <span class="file-date">{{ file.date }}</span>
                 <el-button link type="primary" size="small">下载</el-button>
@@ -123,10 +129,10 @@
             </template>
             <div class="notice-list">
               <div v-for="notice in notices" :key="notice.id" class="notice-item">
-                <el-tag 
-                  size="small" 
-                  :type="notice.type"
-                  class="notice-tag"
+                <el-tag
+                    size="small"
+                    :type="notice.type"
+                    class="notice-tag"
                 >
                   {{ notice.category }}
                 </el-tag>
@@ -142,8 +148,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, watch } from 'vue'
-import { useRouter } from 'vue-router'
+import {ref, onMounted, onUnmounted, watch} from 'vue'
+import {useRouter} from 'vue-router'
 import * as echarts from 'echarts'
 import dayjs from 'dayjs'
 
@@ -174,104 +180,104 @@ const trendChartRef = ref()
 
 // 快捷入口数据
 const quickAccessItems = [
-  { 
-    id: 1, 
-    title: '自愿报告', 
-    icon: 'Document', 
-    count: 12, 
-    type: 'info', 
+  {
+    id: 1,
+    title: '自愿报告',
+    icon: 'Document',
+    count: 12,
+    type: 'info',
     route: '/assurance/info/voluntary-report'  // 自愿报告路由
   },
-  { 
-    id: 2, 
-    title: '强制报告', 
-    icon: 'Warning', 
-    count: 5, 
-    type: 'warning', 
+  {
+    id: 2,
+    title: '强制报告',
+    icon: 'Warning',
+    count: 5,
+    type: 'warning',
     route: '/assurance/info/mandatory-report'  // 强制报告路由
   },
-  { 
-    id: 3, 
-    title: '日常检查', 
-    icon: 'List', 
-    count: 8, 
-    type: 'check', 
+  {
+    id: 3,
+    title: '日常检查',
+    icon: 'List',
+    count: 8,
+    type: 'check',
     route: '/assurance/supervision/daily'  // 日常检查路由
   },
-  { 
-    id: 4, 
-    title: '法定检查', 
-    icon: 'Calendar', 
-    count: 3, 
-    type: 'audit', 
+  {
+    id: 4,
+    title: '法定检查',
+    icon: 'Calendar',
+    count: 3,
+    type: 'audit',
     route: '/assurance/supervision/statutory'  // 法定检查路由
   },
-  { 
-    id: 5, 
-    title: '风险管理', 
-    icon: 'Histogram', 
-    type: 'risk', 
+  {
+    id: 5,
+    title: '风险管理',
+    icon: 'Histogram',
+    type: 'risk',
     route: '/risk'
   },
-  { 
-    id: 6, 
-    title: '系统设置', 
-    icon: 'Setting', 
-    type: 'setting', 
+  {
+    id: 6,
+    title: '系统设置',
+    icon: 'Setting',
+    type: 'setting',
     route: '/settings'
   }
 ]
 
 // 待办任务统计
 const taskStatistics = [
-  { type: 'info', title: '自愿报告', count: 5, icon: 'Document' },
-  { type: 'warning', title: '强制报告', count: 3, icon: 'Warning' },
-  { type: 'check', title: '日常检查', count: 4, icon: 'List' },
-  { type: 'audit', title: '法定检查', count: 2, icon: 'Calendar' }
+  {type: 'info', title: '自愿报告', count: 5, icon: 'Document'},
+  {type: 'warning', title: '强制报告', count: 3, icon: 'Warning'},
+  {type: 'check', title: '日常检查', count: 4, icon: 'List'},
+  {type: 'audit', title: '法定检查', count: 2, icon: 'Calendar'}
 ]
 
 // 最新文件
 const latestFiles = [
-  { id: 1, name: '2021年度安全管理人员培训计划.pdf', date: '2024-03-27' },
-  { id: 2, name: '安全检查管理规定与实施细则.zip', date: '2024-03-26' },
-  { id: 3, name: '关于加强安全生产工作的通知.doc', date: '2024-03-25' },
-  { id: 4, name: '2024年第一季度安全检查报告.pdf', date: '2024-03-24' },
-  { id: 5, name: '安全隐患排查治理制度.doc', date: '2024-03-23' }
+  {id: 1, name: '2021年度安全管理人员培训计划.pdf', date: '2024-03-27'},
+  {id: 2, name: '安全检查管理规定与实施细则.zip', date: '2024-03-26'},
+  {id: 3, name: '关于加强安全生产工作的通知.doc', date: '2024-03-25'},
+  {id: 4, name: '2024年第一季度安全检查报告.pdf', date: '2024-03-24'},
+  {id: 5, name: '安全隐患排查治理制度.doc', date: '2024-03-23'}
 ]
 
 // 通知公告
 const notices = [
-  { 
-    id: 1, 
-    title: '关于开展2024年度安全生产大检查的通知', 
+  {
+    id: 1,
+    title: '关于开展2024年度安全生产大检查的通知',
     date: '2024-03-27',
     category: '安全检查',
     type: 'warning'  // 紧急通知用 warning
   },
-  { 
-    id: 2, 
-    title: '安全管理体系修订版发布及培训通知', 
+  {
+    id: 2,
+    title: '安全管理体系修订版发布及培训通知',
     date: '2024-03-26',
     category: '体系管理',
     type: 'info'  // 普通通知用 info
   },
-  { 
-    id: 3, 
-    title: '关于加强春运期间安全管理工作的通知', 
+  {
+    id: 3,
+    title: '关于加强春运期间安全管理工作的通知',
     date: '2024-03-25',
     category: '运行管理',
     type: 'warning'
   },
-  { 
-    id: 4, 
-    title: '2024年度安全管理人员持证培训通知', 
+  {
+    id: 4,
+    title: '2024年度安全管理人员持证培训通知',
     date: '2024-03-24',
     category: '培训管理',
     type: 'success'  // 培训通知用 success
   },
-  { 
-    id: 5, 
-    title: '关于组织开展安全文化建设活动的通知', 
+  {
+    id: 5,
+    title: '关于组织开展安全文化建设活动的通知',
     date: '2024-03-23',
     category: '安全文化',
     type: 'info'
@@ -386,9 +392,9 @@ onMounted(() => {
         data: data.xAxis
       },
       series: [
-        { data: data.high },
-        { data: data.medium },
-        { data: data.low }
+        {data: data.high},
+        {data: data.medium},
+        {data: data.low}
       ]
     })
   })
@@ -420,13 +426,13 @@ onUnmounted(() => {
   background: linear-gradient(135deg, #1890ff 0%, #36cfc9 100%);
   border-radius: 8px;
   color: white;
-  
+
   h1 {
     margin: 0;
     font-size: 28px;
     font-weight: 500;
   }
-  
+
   .subtitle {
     margin: 8px 0 0;
     font-size: 16px;
@@ -439,31 +445,48 @@ onUnmounted(() => {
   cursor: pointer;
   transition: all 0.3s;
   border: none;
-  
+
   &:hover {
     transform: translateY(-5px);
   }
-  
-  &.info { background: linear-gradient(135deg, #36a3ff 0%, #5abeff 100%); }
-  &.warning { background: linear-gradient(135deg, #ff7a45 0%, #ff9c6e 100%); }
-  &.check { background: linear-gradient(135deg, #52c41a 0%, #73d13d 100%); }
-  &.audit { background: linear-gradient(135deg, #722ed1 0%, #9254de 100%); }
-  &.risk { background: linear-gradient(135deg, #faad14 0%, #ffc53d 100%); }
-  &.setting { background: linear-gradient(135deg, #13c2c2 0%, #36cfc9 100%); }
-  
+
+  &.info {
+    background: linear-gradient(135deg, #36a3ff 0%, #5abeff 100%);
+  }
+
+  &.warning {
+    background: linear-gradient(135deg, #ff7a45 0%, #ff9c6e 100%);
+  }
+
+  &.check {
+    background: linear-gradient(135deg, #52c41a 0%, #73d13d 100%);
+  }
+
+  &.audit {
+    background: linear-gradient(135deg, #722ed1 0%, #9254de 100%);
+  }
+
+  &.risk {
+    background: linear-gradient(135deg, #faad14 0%, #ffc53d 100%);
+  }
+
+  &.setting {
+    background: linear-gradient(135deg, #13c2c2 0%, #36cfc9 100%);
+  }
+
   .icon-wrapper {
     text-align: center;
     margin-bottom: 12px;
-    
+
     .el-icon {
       color: white;
     }
   }
-  
+
   .item-info {
     text-align: center;
     color: white;
-    
+
     h3 {
       margin: 0;
       font-size: 16px;
@@ -476,16 +499,16 @@ onUnmounted(() => {
   cursor: pointer;
   transition: all 0.3s;
   position: relative;
-  
+
   &:hover {
     background: #f5f7fa;
-    
+
     .arrow-icon {
       opacity: 1;
       transform: translateX(0);
     }
   }
-  
+
   .arrow-icon {
     position: absolute;
     right: 16px;
@@ -501,12 +524,12 @@ onUnmounted(() => {
   .file-item,
   .notice-item {
     padding: 12px 0;
-    
+
     .el-icon {
       margin-right: 8px;
       color: #909399;
     }
-    
+
     .notice-tag {
       margin-right: 8px;
     }
@@ -526,8 +549,19 @@ onUnmounted(() => {
 }
 
 /* 任务类型颜色 */
-.info .task-icon { background-color: #409EFF; }
-.warning .task-icon { background-color: #E6A23C; }
-.audit .task-icon { background-color: #67C23A; }
-.notice .task-icon { background-color: #909399; }
+.info .task-icon {
+  background-color: #409EFF;
+}
+
+.warning .task-icon {
+  background-color: #E6A23C;
+}
+
+.audit .task-icon {
+  background-color: #67C23A;
+}
+
+.notice .task-icon {
+  background-color: #909399;
+}
 </style> 

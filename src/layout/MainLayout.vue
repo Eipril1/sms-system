@@ -14,6 +14,14 @@
           :collapse="isCollapse"
           router
       >
+        <!-- 首页 -->
+        <el-menu-item index="/home">
+          <el-icon>
+            <HomeFilled/>
+          </el-icon>
+          <span>首页</span>
+        </el-menu-item>
+
         <!-- 安全政策和目标 -->
         <el-sub-menu index="/policy">
           <template #title>
@@ -62,6 +70,13 @@
             </el-icon>
             <span>安全风险管理</span>
           </template>
+          <!--系统描述-->
+          <el-menu-item index="/risk/">
+            <el-icon>
+              <Monitor/>
+            </el-icon>
+            <span>系统描述</span>
+          </el-menu-item>
           <el-menu-item index="/risk/assessment">
             <el-icon>
               <Search/>
@@ -74,57 +89,19 @@
             </el-icon>
             <span>风险控制与跟踪</span>
           </el-menu-item>
-        </el-sub-menu>
 
-        <!-- 风险管理 -->
-        <el-sub-menu index="/risk-management">
-          <template #title>
-            <el-icon>
-              <Warning/>
-            </el-icon>
-            <span>风险管理</span>
-          </template>
-
-          <!-- 危险源查询 -->
-          <el-menu-item index="/risk-management/hazard-query">
-            <el-icon>
-              <Search/>
-            </el-icon>
-            <span>危险源查询</span>
-          </el-menu-item>
-
-          <!-- 危险源管理动态变化 -->
-          <el-menu-item index="/risk-management/hazard-dynamic">
-            <el-icon>
-              <DataLine/>
-            </el-icon>
-            <span>危险源管理动态变化</span>
-          </el-menu-item>
-
-          <!-- 风险评价标准 -->
-          <el-menu-item index="/risk-management/evaluation-standards">
-            <el-icon>
-              <Files/>
-            </el-icon>
-            <span>风险评价标准</span>
-          </el-menu-item>
 
           <!-- 风险管理方案 -->
-          <el-menu-item index="/risk-management/management-plan">
+          <el-menu-item index="/risk/management-plan">
             <el-icon>
               <Document/>
             </el-icon>
             <span>风险管理方案</span>
           </el-menu-item>
 
-          <!-- 安全隐患动态控制 -->
-          <el-menu-item index="/risk-management/safety-control">
-            <el-icon>
-              <Monitor/>
-            </el-icon>
-            <span>安全隐患动态控制</span>
-          </el-menu-item>
+
         </el-sub-menu>
+
 
         <!-- 3. 安全保证 -->
         <el-sub-menu index="/assurance">
@@ -134,38 +111,52 @@
             </el-icon>
             <span>安全保证</span>
           </template>
-          <el-menu-item index="/assurance/Performance">
-            <el-icon>
-              <TrendCharts/>
-            </el-icon>
-            <span>安全绩效监测</span>
-          </el-menu-item>
-          <el-menu-item index="/assurance/change">
-            <el-icon>
-              <RefreshRight/>
-            </el-icon>
-            <span>变更管理</span>
-          </el-menu-item>
-          <el-menu-item index="/assurance/improvement">
-            <el-icon>
-              <Refresh/>
-            </el-icon>
-            <span>持续改进</span>
-          </el-menu-item>
-          <el-menu-item index="/assurance/info">
-            <el-icon>
-              <Message/>
-            </el-icon>
-            <span>信息管理</span>
-          </el-menu-item>
 
-          <el-menu-item index="/assurance/supervision">
-            <el-icon>
-              <Check/>
-            </el-icon>
-            <span>监督审核</span>
-          </el-menu-item>
+          <!-- 安全绩效评估与监测 -->
+          <el-sub-menu index="/assurance/performance">
+            <template #title>
+              <el-icon>
+                <Search/>
+              </el-icon>
+              <span>安全绩效评估与监测</span>
+            </template>
+
+            <el-menu-item index="/assurance/performance/audit" class="third-level-menu">
+              <el-icon>
+                <Monitor/>
+              </el-icon>
+              <span>内部审核</span>
+            </el-menu-item>
+
+            <el-menu-item index="/assurance/performance/monitoring" class="third-level-menu">
+              <el-icon>
+                <DataLine/>
+              </el-icon>
+              <span>安全绩效监测</span>
+            </el-menu-item>
+          </el-sub-menu>
+
+          <!-- 变更管理 -->
+          <el-sub-menu index="/assurance/change">
+            <template #title>
+              <el-icon>
+                <RefreshRight/>
+              </el-icon>
+              <span>变更管理</span>
+            </template>
+          </el-sub-menu>
+
+          <!-- SMS持续改进 -->
+          <el-sub-menu index="/assurance/improvement">
+            <template #title>
+              <el-icon>
+                <Refresh/>
+              </el-icon>
+              <span>SMS持续改进</span>
+            </template>
+          </el-sub-menu>
         </el-sub-menu>
+
 
         <!-- 4. 安全促进 -->
         <el-sub-menu index="/promotion">
@@ -205,65 +196,65 @@
           <el-menu-item index="/database/findings">发现项库</el-menu-item>
         </el-sub-menu>
 
-        <!-- 安全与质量监督审核 -->
-        <el-sub-menu index="/supervision">
-          <template #title>
-            <el-icon>
-              <Monitor/>
-            </el-icon>
-            <span>安全与质量监督审核</span>
-          </template>
+<!--        &lt;!&ndash; 安全与质量监督审核 &ndash;&gt;-->
+<!--        <el-sub-menu index="/supervision">-->
+<!--          <template #title>-->
+<!--            <el-icon>-->
+<!--              <Monitor/>-->
+<!--            </el-icon>-->
+<!--            <span>安全与质量监督审核</span>-->
+<!--          </template>-->
 
-          <!-- 1. 公司/部门监察与审核 -->
-          <el-menu-item index="/supervision/audit">
-            <el-icon>
-              <Aim/>
-            </el-icon>
-            <span>公司/部门监察与审核</span>
-          </el-menu-item>
+<!--          &lt;!&ndash; 1. 公司/部门监察与审核 &ndash;&gt;-->
+<!--          <el-menu-item index="/supervision/audit">-->
+<!--            <el-icon>-->
+<!--              <Aim/>-->
+<!--            </el-icon>-->
+<!--            <span>公司/部门监察与审核</span>-->
+<!--          </el-menu-item>-->
 
-          <!-- 2. 安全生产过程管理 -->
-          <el-menu-item index="/supervision/safety-production">
-            <el-icon>
-              <SetUp/>
-            </el-icon>
-            <span>安全生产过程管理</span>
-          </el-menu-item>
-        </el-sub-menu>
+<!--          &lt;!&ndash; 2. 安全生产过程管理 &ndash;&gt;-->
+<!--          <el-menu-item index="/supervision/safety-production">-->
+<!--            <el-icon>-->
+<!--              <SetUp/>-->
+<!--            </el-icon>-->
+<!--            <span>安全生产过程管理</span>-->
+<!--          </el-menu-item>-->
+<!--        </el-sub-menu>-->
 
-        <!-- 纠正预防 -->
-        <el-sub-menu index="/correction">
-          <template #title>
-            <el-icon>
-              <Warning/>
-            </el-icon>
-            <span>纠正预防</span>
-          </template>
+<!--        &lt;!&ndash; 纠正预防 &ndash;&gt;-->
+<!--        <el-sub-menu index="/correction">-->
+<!--          <template #title>-->
+<!--            <el-icon>-->
+<!--              <Warning/>-->
+<!--            </el-icon>-->
+<!--            <span>纠正预防</span>-->
+<!--          </template>-->
 
-          <!-- 工作任务分配 -->
-          <el-menu-item index="/correction/task-assignment">
-            <el-icon>
-              <Document/>
-            </el-icon>
-            <span>工作任务分配</span>
-          </el-menu-item>
+<!--          &lt;!&ndash; 工作任务分配 &ndash;&gt;-->
+<!--          <el-menu-item index="/correction/task-assignment">-->
+<!--            <el-icon>-->
+<!--              <Document/>-->
+<!--            </el-icon>-->
+<!--            <span>工作任务分配</span>-->
+<!--          </el-menu-item>-->
 
-          <!-- 发现问题 -->
-          <el-menu-item index="/correction/issue-discovery">
-            <el-icon>
-              <Search/>
-            </el-icon>
-            <span>发现问题</span>
-          </el-menu-item>
+<!--          &lt;!&ndash; 发现问题 &ndash;&gt;-->
+<!--          <el-menu-item index="/correction/issue-discovery">-->
+<!--            <el-icon>-->
+<!--              <Search/>-->
+<!--            </el-icon>-->
+<!--            <span>发现问题</span>-->
+<!--          </el-menu-item>-->
 
-          <!-- 跟踪验证 -->
-          <el-menu-item index="/correction/tracking-verification">
-            <el-icon>
-              <View/>
-            </el-icon>
-            <span>跟踪验证</span>
-          </el-menu-item>
-        </el-sub-menu>
+<!--          &lt;!&ndash; 跟踪验证 &ndash;&gt;-->
+<!--          <el-menu-item index="/correction/tracking-verification">-->
+<!--            <el-icon>-->
+<!--              <View/>-->
+<!--            </el-icon>-->
+<!--            <span>跟踪验证</span>-->
+<!--          </el-menu-item>-->
+<!--        </el-sub-menu>-->
 
         <!-- 系统管理 -->
         <el-sub-menu index="/system">
@@ -328,6 +319,14 @@
               <Key/>
             </el-icon>
             <span>登录日志</span>
+          </el-menu-item>
+
+          <!-- 首页管理 -->
+          <el-menu-item index="/system/homeMg">
+            <el-icon>
+              <Key/>
+            </el-icon>
+            <span>首页管理</span>
           </el-menu-item>
         </el-sub-menu>
       </el-menu>
@@ -408,7 +407,8 @@ import {
   Menu,
   Collection,
   Operation,
-  Key
+  Key,
+  HomeFilled
 } from '@element-plus/icons-vue'
 
 const route = useRoute()
@@ -724,5 +724,15 @@ const goHome = () => {
 }
 
 }
+}
+
+/* 添加三级菜单的缩进样式 */
+:deep(.third-level-menu) {
+  padding-left: 60px !important; /* 增加左侧padding实现缩进 */
+}
+
+/* 如果需要调整图标位置 */
+:deep(.third-level-menu .el-icon) {
+  margin-left: 8px; /* 图标也相应右移 */
 }
 </style> 

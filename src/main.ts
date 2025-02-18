@@ -14,6 +14,17 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }
 
+// 全局错误处理
+app.config.errorHandler = (err, instance, info) => {
+  console.error('Global error:', err)
+  console.log('Error info:', info)
+}
+
+// 异步错误处理
+window.addEventListener('unhandledrejection', event => {
+  console.error('Unhandled promise rejection:', event.reason)
+})
+
 app.use(pinia)
    .use(router)
    .use(ElementPlus)
