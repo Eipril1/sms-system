@@ -1,0 +1,1 @@
+import{_ as t,c as s,b as n,e as _,h as c,i as r}from"./index-97e706ba.js";const a={},d={class:"sms-audit-container"};function i(l,e){const o=c("router-view");return r(),s("div",d,[e[0]||(e[0]=n("h2",null,"SMS 审核",-1)),_(o)])}const u=t(a,[["render",i],["__scopeId","data-v-13953133"]]);export{u as default};

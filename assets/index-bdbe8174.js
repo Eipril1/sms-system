@@ -1,0 +1,1 @@
+import{_ as o,c as n,b as s,e as _,h as c,i as r}from"./index-97e706ba.js";const a={},d={class:"report-container"};function p(i,e){const t=c("el-empty");return r(),n("div",d,[e[0]||(e[0]=s("h2",null,"安全报告",-1)),_(t,{description:"功能开发中..."})])}const m=o(a,[["render",p],["__scopeId","data-v-86e06627"]]);export{m as default};

@@ -1,0 +1,1 @@
+import{_ as t,c as o,b as s,e as _,h as c,i as a}from"./index-97e706ba.js";const r={},d={class:"management-container"};function i(l,e){const n=c("el-empty");return a(),o("div",d,[e[0]||(e[0]=s("h2",null,"安全绩效管理",-1)),_(n,{description:"功能开发中..."})])}const m=t(r,[["render",i],["__scopeId","data-v-c663e930"]]);export{m as default};

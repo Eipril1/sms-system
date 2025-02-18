@@ -1,0 +1,1 @@
+import{_ as t,c,b as o,e as n,h as _,i as a}from"./index-97e706ba.js";const r={},d={class:"check-task-container"};function l(p,e){const s=_("el-empty");return a(),c("div",d,[e[0]||(e[0]=o("h2",null,"安全检查任务",-1)),n(s,{description:"功能开发中..."})])}const k=t(r,[["render",l],["__scopeId","data-v-ee299c63"]]);export{k as default};

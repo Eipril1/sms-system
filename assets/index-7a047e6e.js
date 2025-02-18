@@ -1,0 +1,1 @@
+import{_ as n,c as o,b as s,e as _,h as c,i as a}from"./index-97e706ba.js";const d={},r={class:"system-evaluation-container"};function i(l,e){const t=c("el-empty");return a(),o("div",r,[e[0]||(e[0]=s("h2",null,"安全信息综合分析和系统评价",-1)),_(t,{description:"功能开发中..."})])}const m=n(d,[["render",i],["__scopeId","data-v-f3d206ce"]]);export{m as default};

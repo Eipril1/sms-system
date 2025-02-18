@@ -1,0 +1,1 @@
+import{_ as n,c as o,b as s,e as _,h as c,i as a}from"./index-97e706ba.js";const r={},i={class:"investigation-container"};function d(l,e){const t=c("el-empty");return a(),o("div",i,[e[0]||(e[0]=s("h2",null,"事件调查",-1)),_(t,{description:"功能开发中..."})])}const m=n(r,[["render",d],["__scopeId","data-v-b2744362"]]);export{m as default};

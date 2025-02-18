@@ -1,0 +1,1 @@
+import{_ as t,c as n,b as s,e as _,h as c,i as a}from"./index-97e706ba.js";const r={},d={class:"monitoring-home"};function i(l,e){const o=c("el-empty");return a(),n("div",d,[e[0]||(e[0]=s("h2",null,"监测首页",-1)),_(o,{description:"功能开发中..."})])}const f=t(r,[["render",i],["__scopeId","data-v-e9f0e3af"]]);export{f as default};

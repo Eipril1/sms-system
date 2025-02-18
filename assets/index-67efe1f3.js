@@ -1,0 +1,1 @@
+import{_ as n,c as o,b as s,e as _,h as a,i as c}from"./index-97e706ba.js";const r={},d={class:"flight-data-container"};function i(l,e){const t=a("el-empty");return c(),o("div",d,[e[0]||(e[0]=s("h2",null,"飞行数据分析",-1)),_(t,{description:"功能开发中..."})])}const m=n(r,[["render",i],["__scopeId","data-v-e4b15a87"]]);export{m as default};

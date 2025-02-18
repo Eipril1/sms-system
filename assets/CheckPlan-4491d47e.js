@@ -1,0 +1,1 @@
+import{_ as t,c as o,b as c,e as s,h as _,i as a}from"./index-97e706ba.js";const r={},l={class:"check-plan-container"};function p(d,e){const n=_("el-empty");return a(),o("div",l,[e[0]||(e[0]=c("h2",null,"安全检查计划",-1)),s(n,{description:"功能开发中..."})])}const f=t(r,[["render",p],["__scopeId","data-v-579fb4bb"]]);export{f as default};

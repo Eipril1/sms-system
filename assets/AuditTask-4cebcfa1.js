@@ -1,0 +1,1 @@
+import{_ as s,c as o,b as a,e as n,h as _,i as c}from"./index-97e706ba.js";const r={},d={class:"audit-task-container"};function i(l,e){const t=_("el-empty");return c(),o("div",d,[e[0]||(e[0]=a("h2",null,"SMS 审核任务",-1)),n(t,{description:"功能开发中..."})])}const u=s(r,[["render",i],["__scopeId","data-v-9a09f634"]]);export{u as default};
