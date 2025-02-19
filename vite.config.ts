@@ -4,14 +4,16 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/sms-system/', // 假设你的仓库名为 sms-system
-  plugins: [vue()],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src')
+    plugins: [vue()],
+    base: '',  // 使用空字符串
+    build: {
+        outDir: 'dist',
+        assetsDir: 'assets',
+        emptyOutDir: true
+    },
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, 'src')
+        }
     }
-  },
-  server: {
-    port: 3003
-  }
 }) 

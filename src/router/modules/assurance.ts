@@ -27,36 +27,36 @@ const assuranceRoutes: RouteRecordRaw = {
                             component: () => import('@/views/assurance/performance/monitoring/home/index.vue'),
                             meta: {title: '首页'}
                         },
-                        {
-                            path: 'management',
-                            name: 'MonitoringManagement',
-                            component: () => import('@/views/assurance/performance/monitoring/management/index.vue'),
-                            meta: {title: '安全绩效管理'}
-                        },
-                        {
-                            path: 'report',
-                            name: 'MonitoringReport',
-                            component: () => import('@/views/assurance/performance/monitoring/report/index.vue'),
-                            meta: {title: '安全报告'}
-                        },
-                        {
-                            path: 'investigation',
-                            name: 'MonitoringInvestigation',
-                            component: () => import('@/views/assurance/performance/monitoring/investigation/index.vue'),
-                            meta: {title: '事件调查'}
-                        },
-                        {
-                            path: 'flight-data',
-                            name: 'MonitoringFlightData',
-                            component: () => import('@/views/assurance/performance/monitoring/flight-data/index.vue'),
-                            meta: {title: '飞行数据分析'}
-                        },
-                        {
-                            path: 'system-evaluation',
-                            name: 'MonitoringSystemEvaluation',
-                            component: () => import('@/views/assurance/performance/monitoring/system-evaluation/index.vue'),
-                            meta: {title: '安全信息综合分析和系统评价'}
-                        },
+                        // {
+                        //     path: 'management',
+                        //     name: 'MonitoringManagement',
+                        //     component: () => import('@/views/assurance/performance/monitoring/management/index.vue'),
+                        //     meta: {title: '安全绩效管理'}
+                        // },
+                        // {
+                        //     path: 'report',
+                        //     name: 'MonitoringReport',
+                        //     component: () => import('@/views/assurance/performance/monitoring/report/index.vue'),
+                        //     meta: {title: '安全报告'}
+                        // },
+                        // {
+                        //     path: 'investigation',
+                        //     name: 'MonitoringInvestigation',
+                        //     component: () => import('@/views/assurance/performance/monitoring/investigation/index.vue'),
+                        //     meta: {title: '事件调查'}
+                        // },
+                        // {
+                        //     path: 'flight-data',
+                        //     name: 'MonitoringFlightData',
+                        //     component: () => import('@/views/assurance/performance/monitoring/flight-data/index.vue'),
+                        //     meta: {title: '飞行数据分析'}
+                        // },
+                        // {
+                        //     path: 'system-evaluation',
+                        //     name: 'MonitoringSystemEvaluation',
+                        //     component: () => import('@/views/assurance/performance/monitoring/system-evaluation/index.vue'),
+                        //     meta: {title: '安全信息综合分析和系统评价'}
+                        // },
                         {
                             path: '',
                             redirect: '/assurance/performance/monitoring/home'
@@ -81,18 +81,18 @@ const assuranceRoutes: RouteRecordRaw = {
                             component: () => import('@/views/assurance/performance/audit/sms/index.vue'),
                             meta: {title: 'SMS审核'},
                             children: [
-                                {
-                                    path: 'plan',
-                                    name: 'SmsAuditPlan',
-                                    component: () => import('@/views/assurance/performance/audit/sms/AuditPlan.vue'),
-                                    meta: {title: '审核计划'}
-                                },
-                                {
-                                    path: 'task',
-                                    name: 'SmsAuditTask',
-                                    component: () => import('@/views/assurance/performance/audit/sms/AuditTask.vue'),
-                                    meta: {title: '审核任务'}
-                                }
+                                // {
+                                //     path: 'plan',
+                                //     name: 'SmsAuditPlan',
+                                //     component: () => import('@/views/assurance/performance/audit/sms/AuditPlan.vue'),
+                                //     meta: {title: '审核计划'}
+                                // },
+                                // {
+                                //     path: 'task',
+                                //     name: 'SmsAuditTask',
+                                //     component: () => import('@/views/assurance/performance/audit/sms/AuditTask.vue'),
+                                //     meta: {title: '审核任务'}
+                                // }
                             ]
                         },
                         {
@@ -101,18 +101,18 @@ const assuranceRoutes: RouteRecordRaw = {
                             component: () => import('@/views/assurance/performance/audit/safety/index.vue'),
                             meta: {title: '安全检查'},
                             children: [
-                                {
-                                    path: 'plan',
-                                    name: 'SafetyCheckPlan',
-                                    component: () => import('@/views/assurance/performance/audit/safety/CheckPlan.vue'),
-                                    meta: {title: '检查计划'}
-                                },
-                                {
-                                    path: 'task',
-                                    name: 'SafetyCheckTask',
-                                    component: () => import('@/views/assurance/performance/audit/safety/CheckTask.vue'),
-                                    meta: {title: '检查任务'}
-                                }
+                                // {
+                                //     path: 'plan',
+                                //     name: 'SafetyCheckPlan',
+                                //     component: () => import('@/views/assurance/performance/audit/safety/CheckPlan.vue'),
+                                //     meta: {title: '检查计划'}
+                                // },
+                                // {
+                                //     path: 'task',
+                                //     name: 'SafetyCheckTask',
+                                //     component: () => import('@/views/assurance/performance/audit/safety/CheckTask.vue'),
+                                //     meta: {title: '检查任务'}
+                                // }
                             ]
                         },
                         {
